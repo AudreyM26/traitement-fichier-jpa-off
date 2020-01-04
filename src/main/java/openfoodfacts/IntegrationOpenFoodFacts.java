@@ -32,12 +32,7 @@ public class IntegrationOpenFoodFacts {
 		List<String> lignes = null;
 
 		String filePath = ClassLoader.getSystemClassLoader().getResource("open-food-facts.csv").getFile();
-		System.out.println(filePath);
-		
-		//String test = "blé, lait, beurre,  lait, lactosérum de leee, soja, lait ";
-		//test = test.replaceAll("(.)[\\s+,]+(\\s+)", "$1,");
-		
-		//System.out.println(test+"t");
+		//System.out.println(filePath);
 		
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
@@ -46,7 +41,7 @@ public class IntegrationOpenFoodFacts {
 			File file = new File(filePath);
 			lignes = FileUtils.readLines(file, "UTF-8");
 
-			System.out.println(lignes.get(0));
+			//System.out.println(lignes.get(0));
 			colonneValeursNutri = lignes.get(0);
 			// recuperer nom colonne + numero de colonne pour remplir map
 			// association nom / numero
